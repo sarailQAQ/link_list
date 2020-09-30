@@ -37,8 +37,8 @@ void task3() {
 int main() {
 
     srand(time(0));
-//    task1();
-//    task2();
+    task1();
+    task2();
     task3();
     return 0;
 }

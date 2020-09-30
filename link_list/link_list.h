@@ -62,7 +62,9 @@ public:
         auto n = head;
         while (n->next != nullptr && n->next->data < val) n = n->next;
         if (n->next == nullptr || n->next->data != val) return false;
-        n->next = n->next->next;
+        auto p = n->next;
+        n->next = p->next;
+        delete p;
         size--;
     }
 
@@ -75,8 +77,10 @@ public:
         }
 
         // head is the minimum element
+        auto p = head;
         head = head->next;
         size--;
+        delete head;
         return head->data;
     }
 
